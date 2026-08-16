@@ -4,6 +4,13 @@
 [![FastAPI](https://img.shields.io/badge/Backend-FastAPI-blue?style=for-the-badge&logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com/)
 [![Phaser3](https://img.shields.io/badge/Game_Engine-Phaser%203-orange?style=for-the-badge&logo=phaser&logoColor=white)](https://phaser.io/)
 
+## 🔗 ลิงก์เล่นเกม (Live Deploy Link)
+
+เข้ามาร่วมสนุกและบันทึกคะแนนออนไลน์ได้แล้ววันนี้ที่:
+👉 **[https://dash-n-dodge.vercel.app](https://dash-n-dodge.vercel.app)** 🚗💥
+
+---
+
 **"ขับรถภาษาอะไร" (Dash & Dodge)** คือเกม 2D Web Arcade / Endless Crossing ที่จะมาพิสูจน์ความเร็วและทักษะการสู้ชีวิตของคุณบนถนนหนทางที่เต็มไปด้วยยวดยานพาหนะหลากชนิด! หลบหลีกสิ่งกีดขวาง เอาชีวิตรอดให้นานที่สุด และทำคะแนนสูงสุดเพื่อขึ้นแท่นอันดับหนึ่งบนตารางคะแนน (Leaderboard) หรือตั้งห้องชวนเพื่อนมาร่วมสู้ชีวิตไปด้วยกันผ่านระบบ Lobby แบบเรียลไทม์!
 
 ---
@@ -86,11 +93,4 @@ uvicorn app.main:app --reload
 ```
 *   ระบบ API Docs (Swagger) สามารถเข้าใช้งานได้ที่ `http://localhost:8000/docs`
 *   รันเซิร์ฟเวอร์หลังบ้านเพื่อเชื่อมต่อระบบบันทึกคะแนนและบริการห้องเล่นเกม
-
----
-
-## 🔗 ลิงก์เล่นเกม (Live Deploy Link)
-
-เข้ามาร่วมสนุกและบันทึกคะแนนออนไลน์ได้แล้ววันนี้ที่:
-👉 **[https://dash-n-dodge.vercel.app](https://dash-n-dodge.vercel.app)** 🚗💥
 
