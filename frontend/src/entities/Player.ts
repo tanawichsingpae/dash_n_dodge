@@ -30,7 +30,7 @@ public waitingSide: 'left' | 'right' | null = null;
   private stunStars?: Phaser.GameObjects.Text;
 
   // Scale normalization
-  public baseScale: number = 1.2;
+  public baseScale: number = 1.44;
 
   // Invincibility state
   public isInvincible: boolean = false;
@@ -54,7 +54,7 @@ public waitingSide: 'left' | 'right' | null = null;
 
     this.gridX = startGridX;
     this.gridY = startGridY;
-    this.baseScale = 0.21 ;
+    this.baseScale = 0.252;
 
     this.setScale(this.baseScale);
     const originY = 0.8;
@@ -322,7 +322,7 @@ this.waitingSide = null;
     this.speedBoostActive = false;
 
     const toonSkins = ['female_adventurer', 'female_person', 'male_adventurer', 'male_person', 'robot', 'zombie'];
-    this.baseScale = toonSkins.includes(skin) ? 0.21 : 3.6;
+    this.baseScale = toonSkins.includes(skin) ? 0.252 : 4.32;
     this.setScale(this.baseScale);
 
     const originY = 0.8;

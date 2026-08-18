@@ -3,6 +3,7 @@ import { Player } from '../entities/Player.ts';
 import { TrafficManager } from './TrafficManager.ts';
 import { RaftManager } from './RaftManager.ts';
 import { Raft } from '../entities/Raft.ts';
+import { SoundEffects } from '../utils/sound.ts';
 
 export class CollisionManager {
   private scene: Phaser.Scene;
@@ -39,7 +40,7 @@ export class CollisionManager {
           const vehicle = vehicleObj as any;
           
           // Play coin chime sound
-          (this.scene as any).sound.play('snd_score');
+          SoundEffects.playScore(this.scene);
 
           // Collect coin and trigger score popup
           const pts = (this.scene as any).scoreManager.collectCoin();

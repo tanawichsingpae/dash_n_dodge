@@ -19,7 +19,7 @@ export class SoundEffects {
   public static playScore(scene: Phaser.Scene): void {
     if (scene.registry.get('soundOn') === false) return;
     try {
-      scene.sound.play('snd_score', { volume: 0.3 });
+      scene.sound.play('snd_score', { volume: 0.21, rate: 3 });
     } catch (err) {
       console.warn('[SOUND ERROR] Failed to play score audio:', err);
     }
