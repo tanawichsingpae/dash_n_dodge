@@ -1,26 +1,62 @@
 [
   {
-    "nickname": "POP",
-    "score": 178
+    "nickname": "Alpha",
+    "score": 500
   },
   {
-    "nickname": "SP",
-    "score": 171
+    "nickname": "Beta",
+    "score": 450
   },
   {
-    "nickname": "POP",
-    "score": 68
+    "nickname": "Gamma",
+    "score": 400
   },
   {
-    "nickname": "POP",
-    "score": 38
+    "nickname": "Delta",
+    "score": 350
   },
   {
-    "nickname": "TETESTETERST",
-    "score": 36
+    "nickname": "Epsilon",
+    "score": 300
   },
   {
-    "nickname": "POP",
-    "score": 4
+    "nickname": "Zeta",
+    "score": 250
+  },
+  {
+    "nickname": "Eta",
+    "score": 200
+  },
+  {
+    "nickname": "Theta",
+    "score": 180
+  },
+  {
+    "nickname": "Iota",
+    "score": 160
+  },
+  {
+    "nickname": "Kappa",
+    "score": 140
+  },
+  {
+    "nickname": "Lambda",
+    "score": 120
+  },
+  {
+    "nickname": "Mu",
+    "score": 100
+  },
+  {
+    "nickname": "Nu",
+    "score": 80
+  },
+  {
+    "nickname": "Xi",
+    "score": 60
+  },
+  {
+    "nickname": "Omicron",
+    "score": 40
   }
 ]

@@ -4,6 +4,7 @@ from app.api import scores, leaderboard, rooms
 from app.db.database import Base, engine
 
 # Create database tables automatically if connection engine is online
+# Triggering hot reload for new psycopg2 dependency
 try:
     if engine is not None:
         Base.metadata.create_all(bind=engine)
