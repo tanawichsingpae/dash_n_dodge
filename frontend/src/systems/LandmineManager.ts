@@ -40,8 +40,7 @@ export class LandmineManager {
     for (const gridY of visibleGrassRows) {
       if (!this.populatedRows.has(gridY)) {
         const blockedCols = getBlockedColsCallback ? getBlockedColsCallback(gridY) : new Set<number>();
-        const shopCol = getShopColAtRow(gridY);
-        this._populate(gridY, blockedCols, shopCol);
+        this._populate(gridY, blockedCols, getShopColAtRow);
       }
     }
 
@@ -80,7 +79,11 @@ export class LandmineManager {
 
   // ─── Internal Spawning ─────────────────────────────────────────────────────
 
-  private _populate(gridY: number, blockedCols: Set<number>, shopCol: number | null): void {
+  private _populate(
+    gridY: number,
+    blockedCols: Set<number>,
+    getShopColAtRow: (gridY: number) => number | null
+  ): void {
     this.populatedRows.add(gridY);
 
     // Don't spawn mines on starting rows to avoid instant death
@@ -91,11 +94,14 @@ export class LandmineManager {
 
     const usedCols = new Set<number>(blockedCols);
     
-    // If there is a shop, block shop columns (around shopCol)
-    if (shopCol !== null) {
-      usedCols.add(shopCol);
-      if (shopCol > 0) usedCols.add(shopCol - 1);
-      if (shopCol < 11) usedCols.add(shopCol + 1);
+    // If there is a shop nearby (current row, row above, or row below), block columns around it (3x3 safety zone)
+    for (let targetY = gridY - 1; targetY <= gridY + 1; targetY++) {
+      const shopCol = getShopColAtRow(targetY);
+      if (shopCol !== null) {
+        usedCols.add(shopCol);
+        if (shopCol > 0) usedCols.add(shopCol - 1);
+        if (shopCol < 11) usedCols.add(shopCol + 1);
+      }
     }
 
     // Attempt to place a landmine

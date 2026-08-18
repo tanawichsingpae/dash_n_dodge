@@ -164,6 +164,7 @@ if (this.gridY < 18) {
     }
 
     usedCols.add(col);
+    this.treeCols.add(col);
 
     // สุ่มกระบองเพชร 1 ใน 5 แบบ
     const cactusKey = Phaser.Math.RND.pick(cactusKeys);
@@ -653,9 +654,21 @@ private createSnowBackground(
   // ต้นสน
   if (this.gridY < 18) {
     const treeCount = Phaser.Math.Between(1, 2);
+    const usedCols = new Set<number>();
+
+    if (this.hasShop && this.shopCol !== null) {
+      usedCols.add(this.shopCol);
+    }
 
     for (let i = 0; i < treeCount; i++) {
       const col = Phaser.Math.Between(1, 10);
+
+      if (usedCols.has(col)) {
+        continue;
+      }
+
+      usedCols.add(col);
+      this.treeCols.add(col);
 
       this.createSnowPine(
         col * 40 + 20,
@@ -864,26 +877,6 @@ private createOasisBackground(
       );
     }
   }
-
-  // ขอบทราย
-  bg.fillStyle(
-    0xe8c27a,
-    1
-  );
-
-  bg.fillRect(
-    0,
-    0,
-    width,
-    5
-  );
-
-  bg.fillRect(
-    0,
-    height - 5,
-    width,
-    5
-  );
 
   this.add(bg);
 }
